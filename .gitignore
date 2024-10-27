@@ -7,7 +7,6 @@ cif/
 *npz
 
 # compilation directory
-__pycache__
 *pyc
 
 # saved model directory
