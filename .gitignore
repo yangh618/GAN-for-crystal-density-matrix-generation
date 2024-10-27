@@ -5,3 +5,10 @@ rawdata
 cif/
 *npy
 *npz
+
+# compilation directory
+__pycache__
+*pyc
+
+# saved model directory
+*pth

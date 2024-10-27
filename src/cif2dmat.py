@@ -7,9 +7,7 @@ from pymatgen.core import Lattice, Structure
 from pymatgen.io.cif import CifWriter, CifParser
 import tqdm
 
-NGRID = 16
-SIGMA = 0.1
-PI = 3.1415926
+from constants import *
 
 def site2dmat(atom_sites: np.ndarray) -> np.ndarray:
     '''
@@ -85,5 +83,5 @@ if __name__ == '__main__':
         dmats[cif_id] = dmat
         #break
 
-    dest_file_dir = os.path.join(source_file_dir, f'../dat/dmats.npz')
-    np.savez(dest_file_dir, dmats)
+    dest_file_dir = os.path.join(source_file_dir, f'../dat/dmats.npy')
+    np.save(dest_file_dir, dmats)
