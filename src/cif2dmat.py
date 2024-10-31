@@ -35,7 +35,6 @@ def site2dmat(atom_sites: np.ndarray) -> np.ndarray:
     # This block will be deleted
     ############################################################
 
-
     ############################################################
     
     # For a correct number density matrix, its sum will be the number of atoms in the structure

@@ -94,11 +94,11 @@ def plot_dmat(dmat):
 if __name__ == '__main__':
 
     # True density matrice
-    source_file_dir = os.path.dirname(os.path.abspath(__file__))
-    data_file_path = os.path.join(source_file_dir, f'../dat/dmats.npy')
+    # source_file_dir = os.path.dirname(os.path.abspath(__file__))
+    # data_file_path = os.path.join(source_file_dir, f'../dat/dmats.npy')
 
     # fake density matrice
-    # data_file_path = 'fake_dmats.npy'
+    data_file_path = 'fake_dmats.npy'
 
     dmats = np.load(data_file_path)
     ns, _, _, _ = dmats.shape

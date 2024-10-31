@@ -23,5 +23,5 @@ G.eval()
 num_batch = 64
 
 z = torch.randn((BATCH_SIZE * num_batch, LATENT_SIZE), device=DEVICE)
-unknown_mat = G(z).view(BATCH_SIZE*max_sample, NGRID, NGRID, NGRID).detach().to('cpu').numpy()
+unknown_mat = G(z).view(BATCH_SIZE*num_batch, NGRID, NGRID, NGRID).detach().to('cpu').numpy()
 np.save('fake_dmats.npy', unknown_mat)
