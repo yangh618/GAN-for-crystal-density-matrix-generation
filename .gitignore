@@ -11,3 +11,5 @@ cif/
 
 # saved model directory
 *pth
+
+dmats_index.txt
