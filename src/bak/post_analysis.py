@@ -20,7 +20,7 @@ def check_atomic_number(dmats):
     plt.stairs(counts, bins)
     plt.xlabel('# of atoms')
     plt.ylabel('# of strcutres')
-    plt.title('Interge atomic number Check')
+    plt.title('Atomic number Check')
 
 def check_boundary_conituity(dmats):
 

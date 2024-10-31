@@ -31,30 +31,13 @@ def site2dmat(atom_sites: np.ndarray) -> np.ndarray:
     # number of atoms in the structure
     natom, _ = atom_sites.shape
 
-    # use endpoint false to avoid double counting at the boundary
-    xs = np.linspace(0, 1, NGRID, endpoint=False)
+    ############################################################
+    # This block will be deleted
+    ############################################################
 
-    # generate a grid site matrix using xs, ys (xs), zs (xs)
-    grid_sites = np.array(np.meshgrid(xs, xs, xs))
 
-    # tranpose atom_sites to make it compatible with grid_sites
-    atom_sites = atom_sites.T
-
-    # expand dimensions of grid_sites and atom_sites to make compatible shape
-    grid_sites = grid_sites[:, np.newaxis,:, :]
-    atom_sites = atom_sites[:, :, np.newaxis, np.newaxis, np.newaxis]
-
-    # Use this trick to solve the boundary contidition
-    distances = (grid_sites - atom_sites + 0.5) % 1 - 0.5
-    distances = np.sum(distances ** 2, axis=0)
-
-    # Compute the number density matrix
-    dmat = np.exp(-distances/2/SIGMA**2) /SIGMA**3 /np.sqrt(2*PI)**3
-    dmat = np.sum(dmat, 0) / NGRID**3
-
-    # Uncomment the following line to check your tensor operations
-    # print(atom_sites.shape, grid_sites.shape, distances.shape, dmat.shape)
-
+    ############################################################
+    
     # For a correct number density matrix, its sum will be the number of atoms in the structure
     assert np.abs(np.sum(dmat) - natom) < 1e-3, "Incorrect density matrix!!!"
 
